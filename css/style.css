@@ -130,10 +130,11 @@ html {
   position: relative;
   overflow: hidden;
   padding-top: 90px;
+  margin-top: 40px;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   background-image: url(../assets/img/Shymaa\ ELshayeb\ Cover.jpg);
-  background-size: contain;
-  background-position: bottom left;
+  background-size: cover;
+  background-position: center left;
 }
 
 hero-overlay {
