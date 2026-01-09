@@ -137,13 +137,13 @@ html {
   background-position: center left;
 }
 
-hero-overlay {
+.hero-overlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(
     circle at center,
     transparent 0%,
-    rgba(10, 10, 10, 0.8) 100%
+    rgba(0, 0, 0, 0.5) 100%
   );
   z-index: 1;
 }
@@ -1034,10 +1034,9 @@ section.visible {
 
   .hero {
     background-size: cover;
-    background-position: calc(50% - 100px);
+    background-position: calc(50% - 400px);
     justify-content: center;
   }
-
   .stat-number {
     font-size: 2rem;
   }
@@ -1074,7 +1073,11 @@ section.visible {
   .hero-title {
     font-size: 2.5rem;
   }
-
+  .hero {
+    background-size: cover;
+    background-position: calc(50% - 400px);
+    justify-content: center;
+  }
   .btn-primary,
   .btn-booking {
     padding: 1rem 2rem;
