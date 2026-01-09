@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shaymaa Elshayeb</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="icon"
+      href="./assets/img/Shaymaa Elshayeb.png"
+      type="image/svg+xml"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="#home"
+            ><img src="./assets/img/Shaymaa Elshayeb.png" alt=""
+          /></a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#about">نبذة</a></li>
+          <li><a href="#albums">الألبومات</a></li>
+          <li><a href="#music">الأغاني</a></li>
+          <li><a href="#videos">الفيديوهات</a></li>
+          <li><a href="#events">الحفلات</a></li>
+          <li><a href="#contact">تواصل</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-bg-icon">🎤</div>
+      <div class="hero-content">
+        <h1 class="hero-title">شيماء الشايب</h1>
+        <p class="hero-description">صوت يحمل الأصالة والمعاصرة</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">2.3M+</div>
+            <div class="stat-label">متابع</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">11.9M+</div>
+            <div class="stat-label">استماع</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">114K+</div>
+            <div class="stat-label">مستمع شهري</div>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="scrollToSection('music')">
+          <i class="fas fa-play"></i>
+          <span>استمع الآن</span>
+        </button>
+      </div>
+      <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">نبذة عن الفنانة</h2>
+        <div class="section-divider"></div>
+        <div class="about-content">
+          <div class="about-text">
+            <p class="lead-text">
+              شيماء الشايب، مطربة مصرية موهوبة تجمع بين الأصالة والمعاصرة في
+              أسلوبها الفني المميز.
+            </p>
+            <div class="info-grid">
+              <div class="info-card">
+                <i class="fas fa-music"></i>
+                <h3>مسيرة فنية متميزة</h3>
+                <p>
+                  بدأت مشوارها الفني منذ الصغر وقدمت العديد من الأعمال الناجحة
+                </p>
+              </div>
+              <div class="info-card">
+                <i class="fas fa-star"></i>
+                <h3>تعاونات فنية</h3>
+                <p>
+                  شاركت في العديد من التعاونات الفنية المميزة مع كبار الفنانين
+                </p>
+              </div>
+              <div class="info-card">
+                <i class="fas fa-award"></i>
+                <h3>حضور إعلامي قوي</h3>
+                <p>شاركت في أهم البرامج والحفلات الموسيقية</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Albums Section -->
+    <section id="albums" class="albums-section">
+      <div class="container">
+        <h2 class="section-title">ألبومات الطفولة</h2>
+        <div class="section-divider"></div>
+        <div class="albums-grid">
+          <div class="album-card">
+            <div class="album-icon">🎵</div>
+            <h3>ألبومات مميزة</h3>
+            <p>
+              قدمت شيماء العديد من الألبومات الموجهة للأطفال والتي لاقت نجاحاً
+              كبيراً
+            </p>
+          </div>
+          <div class="album-card">
+            <div class="album-icon">🎼</div>
+            <h3>أغاني الطفولة</h3>
+            <p>أغاني هادفة تجمع بين المتعة والتعليم للأطفال</p>
+          </div>
+          <div class="album-card">
+            <div class="album-icon">🌟</div>
+            <h3>نجاح واسع</h3>
+            <p>حققت ألبومات الأطفال انتشاراً واسعاً في العالم العربي</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music">
+      <div class="container">
+        <h2 class="section-title">الأغاني المميزة</h2>
+        <div class="section-divider"></div>
+        <div class="music-container">
+          <div class="track">
+            <div class="track-header">
+              <div class="track-info">
+                <h3>أغنية مميزة 1</h3>
+                <p>ألحان رائعة</p>
+              </div>
+              <button class="play-btn" onclick="togglePlay(0)">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+          </div>
+
+          <div class="track">
+            <div class="track-header">
+              <div class="track-info">
+                <h3>أغنية مميزة 2</h3>
+                <p>كلمات معبرة</p>
+              </div>
+              <button class="play-btn" onclick="togglePlay(1)">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+          </div>
+
+          <div class="track">
+            <div class="track-header">
+              <div class="track-info">
+                <h3>أغنية مميزة 3</h3>
+                <p>لحن جميل</p>
+              </div>
+              <button class="play-btn" onclick="togglePlay(2)">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+          </div>
+
+          <div class="streaming-platforms">
+            <h3>استمع على المنصات الموسيقية</h3>
+            <div class="platforms-grid">
+              <a href="#" class="platform-btn anghami">
+                <i class="fas fa-music"></i>
+                <div>
+                  <span>Anghami</span>
+                  <small>11.9M استماع</small>
+                </div>
+              </a>
+              <a href="#" class="platform-btn spotify">
+                <i class="fab fa-spotify"></i>
+                <div>
+                  <span>Spotify</span>
+                  <small>114K مستمع شهري</small>
+                </div>
+              </a>
+              <a href="#" class="platform-btn youtube">
+                <i class="fab fa-youtube"></i>
+                <div>
+                  <span>YouTube Music</span>
+                  <small>300K مشترك</small>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos-section">
+      <div class="container">
+        <h2 class="section-title">الكليبات والفيديوهات</h2>
+        <div class="section-divider"></div>
+        <div class="videos-grid">
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <div class="video-icon">🎬</div>
+              <div class="play-overlay">
+                <i class="fas fa-play-circle"></i>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3>كليب فيديو 1</h3>
+              <p>إخراج مميز وإنتاج احترافي</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <div class="video-icon">🎥</div>
+              <div class="play-overlay">
+                <i class="fas fa-play-circle"></i>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3>كليب فيديو 2</h3>
+              <p>تصوير احترافي وفكرة مبتكرة</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <div class="video-icon">📹</div>
+              <div class="play-overlay">
+                <i class="fas fa-play-circle"></i>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3>من وراء الكواليس</h3>
+              <p>لحظات مميزة من كواليس التصوير</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaborations Section -->
+    <section id="collaborations">
+      <div class="container">
+        <h2 class="section-title">أهم التعاونات الفنية</h2>
+        <div class="section-divider"></div>
+        <div class="collab-content">
+          <p class="lead-text">
+            شاركت شيماء الشايب في العديد من التعاونات الفنية المميزة مع نخبة من
+            الفنانين والملحنين والشعراء
+          </p>
+          <div class="collab-grid">
+            <div class="collab-card">
+              <i class="fas fa-microphone"></i>
+              <h4>دويتوهات فنية</h4>
+            </div>
+            <div class="collab-card">
+              <i class="fas fa-guitar"></i>
+              <h4>ألحان متنوعة</h4>
+            </div>
+            <div class="collab-card">
+              <i class="fas fa-pen-fancy"></i>
+              <h4>كلمات معبرة</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+      <div class="container">
+        <h2 class="section-title">أهم الحفلات والبرامج</h2>
+        <div class="section-divider"></div>
+
+        <div class="events-content">
+          <div class="events-category">
+            <h3><i class="fas fa-calendar-star"></i> الحفلات الموسيقية</h3>
+            <p>شاركت في العديد من الحفلات الكبرى في مصر والوطن العربي</p>
+          </div>
+
+          <div class="events-category">
+            <h3><i class="fas fa-tv"></i> البرامج التلفزيونية</h3>
+            <p>ضيفة شرف في أهم البرامج الحوارية والفنية على القنوات الفضائية</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social" class="social-section">
+      <div class="container">
+        <h2 class="section-title">تابعني على السوشيال ميديا</h2>
+        <div class="section-divider"></div>
+        <div class="social-grid">
+          <a href="#" class="social-card facebook">
+            <i class="fab fa-facebook"></i>
+            <h3>Facebook</h3>
+            <p class="followers">2.3M متابع</p>
+          </a>
+          <a href="#" class="social-card youtube">
+            <i class="fab fa-youtube"></i>
+            <h3>YouTube</h3>
+            <p class="followers">300K مشترك</p>
+          </a>
+          <a href="#" class="social-card tiktok">
+            <i class="fab fa-tiktok"></i>
+            <h3>TikTok</h3>
+            <p class="followers">325K متابع</p>
+          </a>
+          <a href="#" class="social-card instagram">
+            <i class="fab fa-instagram"></i>
+            <h3>Instagram</h3>
+            <p class="followers">تابعني</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <div class="container">
+        <h2 class="section-title">آراء الجمهور</h2>
+        <div class="section-divider"></div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"صوت رائع ومميز، أغانيها دائماً تلامس القلب"</p>
+            <div class="testimonial-author">
+              <strong>محمد أحمد</strong>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"فنانة موهوبة جداً، أغاني الأطفال اللي بتقدمها رائعة"</p>
+            <div class="testimonial-author">
+              <strong>سارة محمود</strong>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"صوت جميل وأداء متميز في كل الأغاني"</p>
+            <div class="testimonial-author">
+              <strong>أحمد علي</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="section-title">تواصل معي</h2>
+        <div class="section-divider"></div>
+        <div class="contact-content">
+          <p class="lead-text">للحجوزات والاستفسارات</p>
+          <button class="btn-booking">
+            <i class="fas fa-envelope"></i>
+            <span>احجز حفلة</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h3>شيماء الشايب</h3>
+            <p>مطربة مصرية</p>
+          </div>
+          <div class="footer-links">
+            <a href="#home">الرئيسية</a>
+            <a href="#about">نبذة</a>
+            <a href="#music">الموسيقى</a>
+            <a href="#contact">تواصل</a>
+          </div>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 شيماء الشايب. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
