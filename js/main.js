@@ -68,10 +68,41 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all sections
+// Observe all sections with staggered animation for children
 document.querySelectorAll("section").forEach((section) => {
   sectionObserver.observe(section);
+
+  // Add staggered delays to grid items
+  const gridItems = section.querySelectorAll(
+    ".info-card, .album-card, .video-card, .social-card, .collab-card, .testimonial-card",
+  );
+  gridItems.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.15}s`;
+    item.style.opacity = "0";
+    item.style.transform = "translateY(30px)";
+  });
 });
+
+const itemObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+        entry.target.classList.add("animated-in");
+      }
+    });
+  },
+  { threshold: 0.15 },
+);
+
+document
+  .querySelectorAll(
+    ".info-card, .album-card, .video-card, .social-card, .collab-card, .testimonial-card",
+  )
+  .forEach((item) => {
+    itemObserver.observe(item);
+  });
 
 // ====================================
 // SMOOTH SCROLL FUNCTION
@@ -510,6 +541,25 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Interactive Parallax on Mouse Move
+const hero = document.querySelector(".hero");
+if (hero) {
+  hero.addEventListener("mousemove", (e) => {
+    const icon = document.querySelector(".hero-bg-icon");
+    const content = document.querySelector(".hero-content");
+    if (icon) {
+      const moveX = (e.clientX - window.innerWidth / 2) * 0.05;
+      const moveY = (e.clientY - window.innerHeight / 2) * 0.05;
+      icon.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${moveX * 0.1}deg)`;
+    }
+    if (content) {
+      const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+      const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+      content.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    }
+  });
+}
+
 // ====================================
 // STATS COUNTER ANIMATION
 // ====================================
@@ -559,10 +609,15 @@ if (heroStats) {
 // ====================================
 window.addEventListener("load", () => {
   document.body.style.opacity = "0";
-  document.body.style.transition = "opacity 0.5s ease";
+  document.body.style.transition = "opacity 0.8s ease-in-out";
 
   setTimeout(() => {
     document.body.style.opacity = "1";
+    // Trigger hero animations once loaded
+    const heroContent = document.querySelector(".hero-content");
+    if (heroContent) {
+      heroContent.style.animation = "fadeInUp 1.5s ease forwards";
+    }
   }, 100);
 });
 
