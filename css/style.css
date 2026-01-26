@@ -75,18 +75,17 @@ html {
   position: relative;
   min-height: 60px;
 }
-
-.nav-logo {
+.nav-logo a {
+  display: flex;
+  align-items: center;
   width: 150px;
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
-
-.nav-logo:hover {
+.nav-logo:hover a {
   cursor: pointer;
   transform: scale(1.1);
 }
-
 .nav-logo img {
   max-width: 100%;
   height: auto;
