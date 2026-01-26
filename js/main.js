@@ -7,12 +7,17 @@
 // MOBILE NAVIGATION TOGGLE
 // ====================================
 const navToggle = document.querySelector(".nav-toggle");
+const navSocialToggle = document.querySelector(".nav-social-toggle");
 const navMenu = document.querySelector(".nav-menu");
+const navSocial = document.querySelector(".nav-social");
 const navLinks = document.querySelectorAll(".nav-menu a");
+const socialLinks = document.querySelectorAll(".nav-social a");
 
 if (navToggle) {
   navToggle.addEventListener("click", () => {
     navMenu.classList.toggle("active");
+    // Close social menu if open
+    if (navSocial) navSocial.classList.remove("active");
 
     // Animate toggle icon
     const spans = navToggle.querySelectorAll("span");
@@ -36,6 +41,34 @@ if (navToggle) {
       spans[1].style.opacity = "1";
       spans[2].style.transform = "none";
     });
+  });
+}
+
+// Social Toggle Logic
+if (navSocialToggle && navSocial) {
+  navSocialToggle.addEventListener("click", () => {
+    navSocial.classList.toggle("active");
+    // Close nav menu if open
+    navMenu.classList.remove("active");
+    const spans = navToggle.querySelectorAll("span");
+    spans[0].style.transform = "none";
+    spans[1].style.opacity = "1";
+    spans[2].style.transform = "none";
+
+    // Icon animation for social toggle
+    navSocialToggle.classList.toggle("active");
+  });
+
+  // Close menus when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".navbar")) {
+      navMenu.classList.remove("active");
+      navSocial.classList.remove("active");
+      const spans = navToggle.querySelectorAll("span");
+      spans[0].style.transform = "none";
+      spans[1].style.opacity = "1";
+      spans[2].style.transform = "none";
+    }
   });
 }
 

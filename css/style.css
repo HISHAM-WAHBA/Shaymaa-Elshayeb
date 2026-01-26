@@ -59,7 +59,7 @@ html {
 }
 
 .navbar.scrolled {
-  padding: 0.8rem 0;
+  padding: 0.2rem 0;
   background: rgba(5, 5, 5, 0.95);
   box-shadow: var(--shadow-sm);
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
@@ -72,26 +72,60 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  min-height: 60px;
 }
 
 .nav-logo {
   width: 150px;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
+
 .nav-logo:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
+
 .nav-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
   gap: 2.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-social {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-social a {
+  color: var(--text-gray);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.nav-social a:hover {
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.nav-social-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  flex: 0 0 40px;
 }
 
 .nav-menu a {
@@ -100,6 +134,8 @@ html {
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
 .nav-menu a::after {
@@ -122,6 +158,8 @@ html {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  flex: 0 0 30px;
+  align-items: flex-end;
 }
 
 .nav-toggle span {
@@ -1525,26 +1563,96 @@ section.visible .lead-text {
    RESPONSIVE DESIGN
 ==================================== */
 @media (max-width: 768px) {
+  .nav-container {
+    justify-content: space-between;
+    padding: 0 1.5rem;
+  }
+
+  .nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 1001;
+  }
+
+  .nav-logo:hover {
+    transform: translateX(-50%) scale(1.1);
+  }
+
+  .nav-social {
+    position: fixed;
+    left: -100%;
+    top: 60px; /* Navbar height */
+    bottom: 0;
+    flex-direction: column;
+    justify-content: flex-start; /* Items from top */
+    background: rgba(0, 0, 0, 0.2);
+    width: 70px;
+    padding: 2rem 0;
+    gap: 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-right: 1px solid rgba(212, 175, 55, 0.2);
+    backdrop-filter: blur(20px);
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    height: calc(100vh - 60px);
+  }
+
+  .nav-social.active {
+    left: 0;
+    visibility: visible;
+  }
+
+  .nav-social-toggle {
+    display: flex;
+    z-index: 1002;
+  }
+
   .nav-menu {
     position: fixed;
     right: -100%;
-    top: 70px;
+    top: 60px; /* Navbar height */
+    bottom: 0;
     flex-direction: column;
-    background: rgba(5, 5, 5, 0.95);
-    width: 100%;
-    padding: 2rem;
-    gap: 1.5rem;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-top: var(--glass-border);
+    justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.8);
+    width: 250px;
+    padding: 1rem 0;
+    gap: 1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 1px solid rgba(212, 175, 55, 0.2);
     backdrop-filter: blur(20px);
+    margin: 0;
+    text-align: center;
+    left: auto;
+    transform: none;
+    z-index: 1000;
+    visibility: hidden;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
   }
 
   .nav-menu.active {
     right: 0;
+    visibility: visible;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu a {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 0;
+    font-size: 1.2rem; /* Larger font for mobile */
   }
 
   .nav-toggle {
     display: flex;
+    z-index: 1002;
   }
 
   .hero-content {
@@ -1666,7 +1774,7 @@ section.visible .lead-text {
 .video-modal-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
 }
 
@@ -1678,7 +1786,7 @@ section.visible .lead-text {
   background: var(--dark-bg);
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   animation: modalSlideIn 0.4s ease;
 }
 
