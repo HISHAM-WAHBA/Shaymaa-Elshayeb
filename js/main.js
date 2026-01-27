@@ -171,14 +171,29 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // 🎵 PLAYER CONFIGURATION 🎵
 const songs = [
   {
+    title: "Hassa Byaas",
+    duration: "0:30",
+    path: "../assets/music/Hassa Byaas.mp3", // Add path when available
+  },
+  {
     title: "Khleny Aaysh",
     duration: "0:30", // Updated duration
     path: "../assets/music/khlyny aaysh.mp3",
   },
   {
-    title: "Hassa Byaas",
+    title: "Ayam w Lyaly",
     duration: "0:30",
-    path: "../assets/music/Hassa Byaas.mp3", // Add path when available
+    path: "../assets/music/ayam w lyaly.mp3", // Add path when available
+  },
+  {
+    title: "Ant Wahshny",
+    duration: "0:30",
+    path: "../assets/music/ant wahshny.mp3", // Add path when available
+  },
+  {
+    title: "Saab Alya",
+    duration: "0:30",
+    path: "../assets/music/saab alya.mp3", // Add path when available
   },
 ];
 // ------------------------------------
@@ -485,28 +500,6 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && videoModal.classList.contains("active")) {
     closeVideoModal();
   }
-});
-
-// ====================================
-// PLATFORM BUTTONS
-// ====================================
-document.querySelectorAll(".platform-btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const platform = btn.querySelector("span").textContent;
-    alert(`Redirecting to ${platform}`);
-  });
-});
-
-// ====================================
-// SOCIAL CARDS
-// ====================================
-document.querySelectorAll(".social-card").forEach((card) => {
-  card.addEventListener("click", (e) => {
-    e.preventDefault();
-    const platform = card.querySelector("h3").textContent;
-    alert(`Redirecting to ${platform}`);
-  });
 });
 
 // ====================================
