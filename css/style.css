@@ -1705,7 +1705,7 @@ section.visible .lead-text {
   }
   .hero {
     background-size: cover;
-    background-position: center;
+    background-position: calc(50% - 400px);
     justify-content: center;
     padding: 2rem 1rem;
   }
