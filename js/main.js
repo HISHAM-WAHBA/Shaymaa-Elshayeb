@@ -101,32 +101,24 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all sections with staggered animation for children
+// Observe all sections
 document.querySelectorAll("section").forEach((section) => {
   sectionObserver.observe(section);
-
-  // Add staggered delays to grid items
-  const gridItems = section.querySelectorAll(
-    ".info-card, .album-card, .video-card, .social-card, .collab-card, .testimonial-card",
-  );
-  gridItems.forEach((item, index) => {
-    item.style.transitionDelay = `${index * 0.15}s`;
-    item.style.opacity = "0";
-    item.style.transform = "translateY(30px)";
-  });
 });
 
+// Simplified Observer for general reveals
 const itemObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-        entry.target.classList.add("animated-in");
+        entry.target.classList.add("animate-in");
+      } else {
+        // Remove class when out of view to allow repeat animation
+        entry.target.classList.remove("animate-in");
       }
     });
   },
-  { threshold: 0.15 },
+  { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
 );
 
 document
