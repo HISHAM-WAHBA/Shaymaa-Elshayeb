@@ -11,7 +11,6 @@ const navSocialToggle = document.querySelector(".nav-social-toggle");
 const navMenu = document.querySelector(".nav-menu");
 const navSocial = document.querySelector(".nav-social");
 const navLinks = document.querySelectorAll(".nav-menu a");
-const socialLinks = document.querySelectorAll(".nav-social a");
 
 if (navToggle) {
   navToggle.addEventListener("click", () => {
@@ -165,27 +164,27 @@ const songs = [
   {
     title: "Hassa Byaas",
     duration: "0:30",
-    path: "../assets/music/Hassa Byaas.mp3", // Add path when available
+    path: "../assets/music/Hassa Byaas.mp3",
   },
   {
     title: "Khleny Aaysh",
-    duration: "0:30", // Updated duration
+    duration: "0:30",
     path: "../assets/music/khlyny aaysh.mp3",
   },
   {
     title: "Ayam w Lyaly",
     duration: "0:30",
-    path: "../assets/music/ayam w lyaly.mp3", // Add path when available
+    path: "../assets/music/ayam w lyaly.mp3",
   },
   {
     title: "Ant Wahshny",
     duration: "0:30",
-    path: "../assets/music/ant wahshny.mp3", // Add path when available
+    path: "../assets/music/ant wahshny.mp3",
   },
   {
     title: "Saab Alya",
     duration: "0:30",
-    path: "../assets/music/saab alya.mp3", // Add path when available
+    path: "../assets/music/saab alya.mp3",
   },
 ];
 // ------------------------------------
@@ -662,8 +661,8 @@ const logo = document.querySelector(".nav-logo");
 if (logo) {
   logo.addEventListener("click", () => {
     clickCount++;
-    if (clickCount === 5) {
-      alert("🎵 Thanks for your interest! Follow us on all platforms 🎵");
+    if (clickCount === 3) {
+      alert("🎵 Thanks for visit us ! Follow us on all platforms 🎵");
       clickCount = 0;
     }
   });
