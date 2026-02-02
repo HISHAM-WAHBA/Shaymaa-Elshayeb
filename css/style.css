@@ -407,7 +407,7 @@ section.visible .lead-text {
    ABOUT SECTION
 ==================================== */
 #about {
-  background: var(--light-bg);
+  background: var(--dark-bg);
 }
 
 .info-grid {
@@ -427,6 +427,8 @@ section.visible .lead-text {
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .info-card::before {
@@ -1102,9 +1104,10 @@ section.visible .lead-text {
 }
 
 .events-content {
-  max-width: 900px;
+  width: 100%;
   margin: 0 auto;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
@@ -1117,16 +1120,12 @@ section.visible .lead-text {
   backdrop-filter: blur(10px);
 }
 
-.events-category:hover {
-  border-color: var(--primary-color);
-  transform: scale(1.02);
-}
-
 .events-category h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -1135,9 +1134,10 @@ section.visible .lead-text {
 }
 
 .events-category p {
+  text-align: center;
   color: var(--text-gray);
   font-size: 1.1rem;
-  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 /* ====================================
