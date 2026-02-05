@@ -163,27 +163,22 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 const songs = [
   {
     title: "Hassa Byaas",
-    duration: "0:30",
     path: "../assets/music/Hassa Byaas.mp3",
   },
   {
     title: "Khleny Aaysh",
-    duration: "0:30",
-    path: "../assets/music/khlyny aaysh.mp3",
+    path: "../assets/music/khlyny aaysh.wav",
   },
   {
     title: "Ayam w Lyaly",
-    duration: "0:30",
     path: "../assets/music/ayam w lyaly.mp3",
   },
   {
     title: "Ant Wahshny",
-    duration: "0:30",
     path: "../assets/music/ant wahshny.mp3",
   },
   {
     title: "Saab Alya",
-    duration: "0:30",
     path: "../assets/music/saab alya.mp3",
   },
 ];
@@ -195,11 +190,46 @@ const audio = new Audio(); // Real Audio Object
 
 const playerLabel = document.querySelector(".current-track-info .name");
 const playPauseBtn = document.querySelector(".ctrl-btn.play-pause i");
+const progressContainer = document.querySelector(".player-progress-container");
 const progressBar = document.querySelector(".player-progress-bar");
 const timeDisplayCurrent = document.getElementById("current-time");
 const timeDisplayTotal = document.getElementById("duration");
 
 let trackItemsElements = [];
+
+// Format Time Helper
+const formatTime = (time) => {
+  if (isNaN(time)) return "0:00";
+  const min = Math.floor(time / 60);
+  const sec = Math.floor(time % 60);
+  return `${min}:${sec < 10 ? "0" : ""}${sec}`;
+};
+
+// Load Track Durations Dynamically
+function loadTrackDurations() {
+  songs.forEach((song, index) => {
+    const tempAudio = new Audio(song.path);
+    tempAudio.addEventListener("loadedmetadata", () => {
+      const duration = formatTime(tempAudio.duration);
+      song.duration = duration;
+
+      // Update DOM if rendered
+      const trackDurationEl =
+        document.querySelectorAll(".track-duration")[index];
+      if (trackDurationEl) {
+        trackDurationEl.textContent = duration;
+      }
+
+      // Update total time display if this is the current track and not playing
+      if (index === currentTrackIndex) {
+        const timeDisplayTotal = document.getElementById("duration");
+        if (timeDisplayTotal && timeDisplayTotal.textContent === "0:00") {
+          timeDisplayTotal.textContent = duration;
+        }
+      }
+    });
+  });
+}
 
 // Initialize Player
 function initPlayer() {
@@ -225,6 +255,7 @@ function initPlayer() {
     return;
   }
 
+  loadTrackDurations();
   renderTrackList();
   trackItemsElements = document.querySelectorAll(".track-item");
 
@@ -249,6 +280,11 @@ function initPlayer() {
   // Audio Event Listeners
   audio.addEventListener("timeupdate", updateProgress);
   audio.addEventListener("ended", playNext);
+
+  // Progress Bar Click
+  if (progressContainer) {
+    progressContainer.addEventListener("click", setProgress);
+  }
 
   // Initialize time displays with default values
   if (timeDisplayCurrent) timeDisplayCurrent.textContent = "0:00";
@@ -322,7 +358,7 @@ function playNext() {
 function updatePlayerInfo(index) {
   const songData = songs[index] || { title: "Unknown", duration: "0:00" };
   playerLabel.textContent = songData.title;
-  timeDisplayTotal.textContent = songData.duration;
+  timeDisplayTotal.textContent = songData.duration || "0:00";
 
   // Reset all track durations to original
   trackItemsElements.forEach((item, i) => {
@@ -364,13 +400,6 @@ function updateProgress() {
   const percent = (currentTime / duration) * 100;
   progressBar.style.width = `${percent}%`;
 
-  // Format Time
-  const formatTime = (time) => {
-    const min = Math.floor(time / 60);
-    const sec = Math.floor(time % 60);
-    return `${min}:${sec < 10 ? "0" : ""}${sec}`;
-  };
-
   const currentFormatted = formatTime(currentTime);
   timeDisplayCurrent.textContent = currentFormatted;
 
@@ -390,6 +419,16 @@ function updateProgress() {
   }
 }
 
+function setProgress(e) {
+  const width = this.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+
+  if (!isNaN(duration)) {
+    audio.currentTime = (clickX / width) * duration;
+  }
+}
+
 function renderTrackList() {
   const trackListContainer = document.querySelector(".track-list");
   if (!trackListContainer) return;
@@ -404,7 +443,10 @@ function renderTrackList() {
       <div class="track-details">
         <span class="track-name">${song.title}</span>
       </div>
-      <span class="track-duration">${song.duration}</span>
+      <span class="track-duration">${song.duration || "..."}</span>
+      <a href="${song.path}" download class="track-download-btn" onclick="event.stopPropagation()">
+        <i class="fas fa-download"></i>
+      </a>
     `;
     trackListContainer.appendChild(item);
   });
