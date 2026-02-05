@@ -167,7 +167,7 @@ const songs = [
   },
   {
     title: "Khleny Aaysh",
-    path: "../assets/music/khlyny aaysh.wav",
+    path: "../assets/music/khlyny aaysh.mp3",
   },
   {
     title: "Ayam w Lyaly",
@@ -709,3 +709,4 @@ if (logo) {
     }
   });
 }
+
