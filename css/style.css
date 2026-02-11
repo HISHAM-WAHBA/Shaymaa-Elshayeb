@@ -1,15 +1,12 @@
-/* ====================================
-   SHAIMAA ELSHAYEB - Portfolio Style
-   Modern & Elegant Design
-==================================== */
-
-/* Reset & Base */
+/* #region RESET & BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* #endregion */
 
+/* #region VARIABLES */
 :root {
   --primary-color: #d4af37;
   --secondary-color: #aa8c2c;
@@ -29,7 +26,9 @@
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
   --glass-border: 1px solid rgba(255, 255, 255, 0.08);
 }
+/* #endregion */
 
+/* #region BASE */
 body {
   font-family: "Tajawal", "Playfair Display", serif;
   background-color: var(--dark-bg);
@@ -42,10 +41,9 @@ body {
 html {
   scroll-behavior: smooth;
 }
+/* #endregion */
 
-/* ====================================
-   NAVIGATION
-==================================== */
+/* #region NAVIGATION */
 .navbar {
   position: fixed;
   top: 0;
@@ -171,10 +169,8 @@ html {
   background: var(--primary-color);
   transition: all 0.3s ease;
 }
-
-/* ====================================
-   HERO SECTION
-==================================== */
+/* #endregion */
+/* #region HERO SECTION */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -346,10 +342,8 @@ html {
   border-radius: 2px;
   animation: scroll 2s infinite;
 }
-
-/* ====================================
-   SECTIONS - General
-==================================== */
+/* #endregion */
+/* #region SECTIONS - General */
 section {
   padding: 6rem 2rem;
   opacity: 0;
@@ -402,10 +396,8 @@ section.visible .lead-text {
   margin: 0 auto 1.5rem;
   line-height: 1.8;
 }
-
-/* ====================================
-   ABOUT SECTION
-==================================== */
+/* #endregion */
+/* #region ABOUT SECTION */
 #about {
   background: var(--dark-bg);
 }
@@ -473,10 +465,8 @@ section.visible .lead-text {
   color: var(--text-gray);
   line-height: 1.6;
 }
-
-/* ====================================
-   ALBUMS SECTION
-==================================== */
+/* #endregion */
+/* #region ALBUMS SECTION */
 .albums-section {
   background: var(--dark-bg);
 }
@@ -519,7 +509,7 @@ section.visible .lead-text {
   color: var(--text-gray);
   line-height: 1.6;
 }
-
+/* #endregion */
 /* ====================================
    MUSIC SECTION
 ==================================== */
@@ -1349,6 +1339,7 @@ section.visible .lead-text {
 .btn-booking {
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
   gap: 1rem;
   background: var(--gradient-gold);
   color: var(--dark-bg);
@@ -1356,7 +1347,7 @@ section.visible .lead-text {
   border: none;
   border-radius: 50px;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 800;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 5px 20px rgba(201, 150, 61, 0.4);

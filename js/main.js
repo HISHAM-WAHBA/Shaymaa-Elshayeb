@@ -1,11 +1,4 @@
-// ====================================
-// SHAIMAA ELSHAYEB - Portfolio Script
-// Modern Interactive Features
-// ====================================
-
-// ====================================
-// MOBILE NAVIGATION TOGGLE
-// ====================================
+// #region MOBILE NAVIGATION TOGGLE
 const navToggle = document.querySelector(".nav-toggle");
 const navSocialToggle = document.querySelector(".nav-social-toggle");
 const navMenu = document.querySelector(".nav-menu");
@@ -70,10 +63,9 @@ if (navSocialToggle && navSocial) {
     }
   });
 }
+// #endregion
 
-// ====================================
-// NAVBAR SCROLL EFFECT
-// ====================================
+// #region NAVBAR SCROLL EFFECT
 const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
@@ -83,10 +75,9 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("scrolled");
   }
 });
+// #endregion
 
-// ====================================
-// SCROLL ANIMATIONS
-// ====================================
+// #region SCROLL ANIMATIONS
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -100px 0px",
@@ -127,10 +118,9 @@ document
   .forEach((item) => {
     itemObserver.observe(item);
   });
+// #endregion
 
-// ====================================
-// SMOOTH SCROLL FUNCTION
-// ====================================
+// #region SMOOTH SCROLL FUNCTION
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   if (section) {
@@ -154,10 +144,9 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+// #endregion
 
-// ====================================
-// MUSIC PLAYER
-// ====================================
+// #region MUSIC PLAYER
 
 // 🎵 PLAYER CONFIGURATION 🎵
 const songs = [
@@ -170,16 +159,36 @@ const songs = [
     path: "../assets/music/khlyny aaysh.mp3",
   },
   {
-    title: "Ayam w Lyaly",
-    path: "../assets/music/ayam w lyaly.mp3",
+    title: "Sad Khana",
+    path: "../assets/music/Sad Khana.mp3",
   },
   {
-    title: "Ant Wahshny",
-    path: "../assets/music/ant wahshny.mp3",
+    title: "yfre kteer",
+    path: "../assets/music/yfre kteer.mp3",
   },
   {
-    title: "Saab Alya",
-    path: "../assets/music/saab alya.mp3",
+    title: "Han'esh Weladk",
+    path: "../assets/music/Han'esh Weladk.mp3",
+  },
+  {
+    title: "matrohsh",
+    path: "../assets/music/matrohsh.mp3",
+  },
+  {
+    title: "mnglksh fy haga whsha",
+    path: "../assets/music/mnglksh fy haga whsha.mp3",
+  },
+  {
+    title: "enta omry",
+    path: "../assets/music/enta omrey.mp3",
+  },
+  {
+    title: "El Areeb Menak baeed",
+    path: "../assets/music/El Areeb Menak baeed.mp3",
+  },
+  {
+    title: "laetak feen",
+    path: "../assets/music/laetak feen.mp3",
   },
 ];
 // ------------------------------------
@@ -454,10 +463,9 @@ function renderTrackList() {
 
 // Start
 initPlayer();
+// #endregion
 
-// ====================================
-// VIDEO MODAL POPUP
-// ====================================
+// #region VIDEO MODAL POPUP
 const videoModal = document.getElementById("video-modal");
 const videoIframe = document.getElementById("video-iframe");
 const videoModalClose = document.querySelector(".video-modal-close");
@@ -536,17 +544,6 @@ document.addEventListener("keydown", (e) => {
 });
 
 // ====================================
-// BOOKING BUTTON
-// ====================================
-const bookingBtn = document.querySelector(".btn-booking");
-if (bookingBtn) {
-  bookingBtn.addEventListener("click", () => {
-    window.location.href =
-      "mailto:booking@shaimaaelshayeb.com?subject=Concert Booking&body=I would like to inquire about booking a concert";
-  });
-}
-
-// ====================================
 // ACTIVE NAV LINK ON SCROLL
 // ====================================
 const sections = document.querySelectorAll("section[id]");
@@ -571,18 +568,16 @@ function highlightNavLink() {
 }
 
 window.addEventListener("scroll", highlightNavLink);
+// #endregion
 
-// ====================================
-// TESTIMONIALS ANIMATION
-// ====================================
+// #region TESTIMONIALS ANIMATION
 const testimonials = document.querySelectorAll(".testimonial-card");
 testimonials.forEach((card, index) => {
   card.style.animationDelay = `${index * 0.2}s`;
 });
+// #endregion
 
-// ====================================
-// PARALLAX EFFECT FOR HERO
-// ====================================
+// #region PARALLAX EFFECT FOR HERO
 window.addEventListener("scroll", () => {
   const scrolled = window.pageYOffset;
   const heroContent = document.querySelector(".hero-content");
@@ -599,8 +594,9 @@ window.addEventListener("scroll", () => {
     }deg)`;
   }
 });
+// #endregion
 
-// Interactive Parallax on Mouse Move
+// #region Interactive Parallax on Mouse Move
 const hero = document.querySelector(".hero");
 if (hero) {
   hero.addEventListener("mousemove", (e) => {
@@ -618,10 +614,9 @@ if (hero) {
     }
   });
 }
+// #endregion
 
-// ====================================
-// STATS COUNTER ANIMATION
-// ====================================
+// #region STATS COUNTER ANIMATION
 function animateCounter(element, target, suffix = "") {
   let current = 0;
   const increment = target / 100;
@@ -662,10 +657,9 @@ const heroStats = document.querySelector(".hero-stats");
 if (heroStats) {
   statsObserver.observe(heroStats);
 }
+// #endregion
 
-// ====================================
-// PAGE LOAD ANIMATION
-// ====================================
+// #region PAGE LOAD ANIMATION
 window.addEventListener("load", () => {
   document.body.style.opacity = "0";
   document.body.style.transition = "opacity 0.8s ease-in-out";
@@ -679,10 +673,9 @@ window.addEventListener("load", () => {
     }
   }, 100);
 });
+// #endregion
 
-// ====================================
-// COPY EMAIL ON CLICK (Optional)
-// ====================================
+// #region COPY EMAIL ON CLICK (Optional)
 const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
 emailLinks.forEach((link) => {
   link.addEventListener("contextmenu", (e) => {
@@ -693,10 +686,9 @@ emailLinks.forEach((link) => {
     });
   });
 });
+// #endregion
 
-// ====================================
-// EASTER EGG - Secret Feature
-// ====================================
+// #region EASTER EGG - Secret Feature
 let clickCount = 0;
 const logo = document.querySelector(".nav-logo");
 
@@ -709,4 +701,4 @@ if (logo) {
     }
   });
 }
-
+// #endregion
