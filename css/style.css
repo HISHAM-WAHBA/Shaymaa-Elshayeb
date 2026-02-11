@@ -1118,7 +1118,7 @@ section.visible .lead-text {
 
 .events-category {
   background: var(--card-bg);
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 20px;
   border: var(--glass-border);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1127,7 +1127,7 @@ section.visible .lead-text {
 
 .events-category h3 {
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1142,7 +1142,7 @@ section.visible .lead-text {
   text-align: center;
   color: var(--text-gray);
   font-size: 1.1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* ====================================
