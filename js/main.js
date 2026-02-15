@@ -453,9 +453,6 @@ function renderTrackList() {
         <span class="track-name">${song.title}</span>
       </div>
       <span class="track-duration">${song.duration || "..."}</span>
-      <a href="${song.path}" download class="track-download-btn" onclick="event.stopPropagation()">
-        <i class="fas fa-download"></i>
-      </a>
     `;
     trackListContainer.appendChild(item);
   });
