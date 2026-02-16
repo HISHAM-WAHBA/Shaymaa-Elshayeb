@@ -4,8 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* #endregion */
-
+/* #endregion RESET & BASE */
 /* #region VARIABLES */
 :root {
   --primary-color: #d4af37;
@@ -26,8 +25,7 @@
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
   --glass-border: 1px solid rgba(255, 255, 255, 0.08);
 }
-/* #endregion */
-
+/* #endregion VARIABLES */
 /* #region BASE */
 body {
   font-family: "Tajawal", "Playfair Display", serif;
@@ -41,8 +39,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
-/* #endregion */
-
+/* #endregion BASE */
 /* #region NAVIGATION */
 .navbar {
   position: fixed;
@@ -166,6 +163,7 @@ html {
 .nav-toggle span {
   width: 25px;
   height: 3px;
+  border-radius: 5px;
   background: var(--primary-color);
   transition: all 0.3s ease;
 }
@@ -510,9 +508,7 @@ section.visible .lead-text {
   line-height: 1.6;
 }
 /* #endregion */
-/* ====================================
-   MUSIC SECTION
-==================================== */
+/* #region MUSIC SECTION */
 #music {
   background: linear-gradient(to bottom, var(--light-bg), var(--dark-bg));
 }
@@ -960,10 +956,8 @@ section.visible .lead-text {
 .platform-btn.youtube i {
   color: #ff0000;
 }
-
-/* ====================================
-   VIDEOS SECTION
-==================================== */
+/* #endregion */
+/* #region VIDEOS SECTION */
 .videos-section {
   background: var(--light-bg);
 }
@@ -1048,10 +1042,8 @@ section.visible .lead-text {
   color: var(--text-gray);
   font-size: 0.95rem;
 }
-
-/* ====================================
-   COLLABORATIONS SECTION
-==================================== */
+/* #endregion */
+/* #region COLLABORATIONS SECTION */
 #collaborations {
   background: var(--dark-bg);
 }
@@ -1087,10 +1079,8 @@ section.visible .lead-text {
 .collab-card h4 {
   font-size: 1.3rem;
 }
-
-/* ====================================
-   EVENTS SECTION
-==================================== */
+/* #endregion */
+/* #region EVENTS SECTION */
 .events-section {
   background: var(--light-bg);
 }
@@ -1131,10 +1121,8 @@ section.visible .lead-text {
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
-
-/* ====================================
-   SOCIAL MEDIA SECTION
-==================================== */
+/* #endregion */
+/* #region SOCIAL MEDIA SECTION */
 .social-section {
   background: var(--dark-bg);
 }
@@ -1212,10 +1200,8 @@ section.visible .lead-text {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
-/* ====================================
-   TESTIMONIALS SECTION
-==================================== */
+/* #endregion */
+/* #region TESTIMONIALS SECTION */
 #testimonials {
   background: var(--light-bg);
 }
@@ -1314,10 +1300,8 @@ section.visible .lead-text {
   display: block;
   margin-top: 0.5rem;
 }
-
-/* ====================================
-   CONTACT SECTION
-==================================== */
+/* #endregion */
+/* #region CONTACT SECTION */
 .contact-section {
   background: var(--dark-bg);
   text-align: center;
@@ -1344,13 +1328,8 @@ section.visible .lead-text {
   transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(201, 150, 61, 0.6);
 }
-
-/* ====================================
-   FOOTER
-==================================== */
-/* ====================================
-   FOOTER - Modern & Chic
-==================================== */
+/* #endregion */
+/* #region FOOTER */
 .footer {
   background: linear-gradient(to bottom, #080808, #000000);
   padding: 2rem 0;
@@ -1500,10 +1479,8 @@ section.visible .lead-text {
 .footer-bottom a:hover {
   color: #9f4bd8;
 }
-
-/* ====================================
-   ANIMATIONS
-==================================== */
+/* #endregion */
+/* #region ANIMATIONS */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1677,10 +1654,8 @@ section.visible .lead-text {
     transform: rotate(0);
   }
 }
-
-/* ====================================
-   RESPONSIVE DESIGN
-==================================== */
+/* #endregion */
+/* #region RESPONSIVE DESIGN */
 @media (max-width: 900px) {
   .nav-container {
     justify-content: space-between;
@@ -2118,9 +2093,8 @@ section.visible .lead-text {
     font-size: 1rem;
   }
 }
-/* ====================================
-   Developer Credit
-==================================== */
+/* #endregion */
+/* #region Developer Credit */
 .developer-credit {
   width: 100%;
   text-align: center;
@@ -2157,3 +2131,4 @@ section.visible .lead-text {
 .developer-credit a:hover::after {
   width: 100%;
 }
+/* #endregion */

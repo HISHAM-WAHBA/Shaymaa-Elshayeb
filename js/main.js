@@ -14,9 +14,9 @@ if (navToggle) {
     // Animate toggle icon
     const spans = navToggle.querySelectorAll("span");
     if (navMenu.classList.contains("active")) {
-      spans[0].style.transform = "rotate(45deg) translateY(10px)";
+      spans[0].style.transform = "rotate(45deg) translateY(11px)";
       spans[1].style.opacity = "0";
-      spans[2].style.transform = "rotate(-45deg) translateY(-10px)";
+      spans[2].style.transform = "rotate(-45deg) translateY(-11px)";
     } else {
       spans[0].style.transform = "none";
       spans[1].style.opacity = "1";
@@ -539,10 +539,9 @@ document.addEventListener("keydown", (e) => {
     closeVideoModal();
   }
 });
+// #endregion
 
-// ====================================
-// ACTIVE NAV LINK ON SCROLL
-// ====================================
+// #region ACTIVE NAV LINK ON SCROLL
 const sections = document.querySelectorAll("section[id]");
 
 function highlightNavLink() {
