@@ -163,7 +163,7 @@ const songs = [
     path: "../assets/music/Sad Khana.mp3",
   },
   {
-    title: "yfre kteer",
+    title: "Yfre Kteer",
     path: "../assets/music/yfre kteer.mp3",
   },
   {
@@ -171,15 +171,15 @@ const songs = [
     path: "../assets/music/Han'esh Weladk.mp3",
   },
   {
-    title: "matrohsh",
+    title: "Matrohsh",
     path: "../assets/music/matrohsh.mp3",
   },
   {
-    title: "mnglksh fy haga whsha",
+    title: "Mnglksh Fy Haga Whsha",
     path: "../assets/music/mnglksh fy haga whsha.mp3",
   },
   {
-    title: "enta omry",
+    title: "Enta Omry",
     path: "../assets/music/enta omrey.mp3",
   },
   {
@@ -187,7 +187,7 @@ const songs = [
     path: "../assets/music/El Areeb Menak baeed.mp3",
   },
   {
-    title: "laetak feen",
+    title: "Laetak Feen",
     path: "../assets/music/laetak feen.mp3",
   },
 ];
