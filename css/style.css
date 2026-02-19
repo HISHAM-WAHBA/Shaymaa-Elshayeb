@@ -212,8 +212,8 @@ html {
   position: relative;
   z-index: 10;
   text-align: center;
-  max-width: 900px;
-  padding: 0 2rem;
+  max-width: 1000px;
+  padding: 0 1rem;
 }
 
 .hero-subtitle {
@@ -1226,6 +1226,8 @@ section.visible .lead-text {
 
 .testimonials-grid {
   display: grid;
+  align-items: center;
+  justify-items: center;
   grid-template-columns: 1fr 400px 1fr;
   grid-template-rows: repeat(3, 1fr);
   gap: 2rem;
@@ -1258,6 +1260,7 @@ section.visible .lead-text {
 
 /* TESTIMONIAL CARDS */
 .testimonial-card {
+  text-align: center;
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 20px;
@@ -1396,7 +1399,6 @@ section.visible .lead-text {
   }
 
   .testimonial-card {
-    max-width: 100%;
     transform: none !important;
     opacity: 0;
     margin: 0 !important; /* Reset margins */
@@ -2062,7 +2064,7 @@ section.visible .lead-text {
   }
 
   .testimonial-card {
-    max-width: 70%;
+    max-width: 40%;
   }
 }
 
@@ -2077,12 +2079,14 @@ section.visible .lead-text {
   }
 
   .testimonials-grid {
-    gap: 20rem;
+    gap: 5rem;
+    width: 100%;
+    padding: 4rem;
   }
 
   .testimonial-card {
-    max-width: 50%; /* Wider cards on huge screens */
-    padding: 4rem;
+    width: 100%;
+    padding: 3rem;
   }
 
   /* Footer Optimizations for Large Screens */
